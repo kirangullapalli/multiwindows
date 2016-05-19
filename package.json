@@ -1,0 +1,14 @@
+{
+  "name": "electron-demo-multiwindows",
+  "version": "1.0.0",
+  "description": "electron multi window demo",
+  "main": "app.js",
+  "scripts": {
+    "start":"electron ."
+  },
+  "author": "kiran",
+  "license": "ISC",
+  "dependencies": {
+    "electron-prebuilt": "^1.1.0"
+  }
+}
