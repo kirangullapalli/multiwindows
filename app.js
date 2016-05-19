@@ -14,5 +14,6 @@ app.on('ready',function() {
     ipc.on('asynchronous-message', function(event,args){
     var prefWindow=new BrowserWindow({width:200,height:400});
         prefWindow.loadURL('http://google.com')
+
     })
 })
