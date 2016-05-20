@@ -10,10 +10,30 @@ app.on('ready',function() {
             height: 600
         })
     mainWindow.loadURL(path.join('file://', __dirname, '/main.html'))
+    mainWindow.maximize();
     //mainWindow.webContents.openDevTools()
     ipc.on('asynchronous-message', function(event,args){
-    var prefWindow=new BrowserWindow({width:200,height:400});
-        prefWindow.loadURL('http://google.com')
-
-    })
+        if(args=="Quit") {
+            BrowserWindow.getAllWindows().forEach(function (win) {
+                win.close()
+            })
+        }else if(args=="Balances")
+        {
+            var balWindow = new BrowserWindow(
+                {
+                    width: 800,
+                    height: 600,
+                    frame:false
+                })
+            balWindow.loadURL(path.join('file://', __dirname, '/balances.html'))
+        }else if(args=="Finder")
+        {
+            var finderWindow = new BrowserWindow(
+                {
+                    width: 800,
+                    height: 600
+                })
+            finderWindow.loadURL(path.join('file://', __dirname, '/finder.html'))
+        }
+         })
 })
